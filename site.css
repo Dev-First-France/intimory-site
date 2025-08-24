@@ -108,3 +108,15 @@ footer{border-top:1px solid var(--border);margin-top:30px}
 }
 .feat-icon svg{width:20px;height:20px;fill:#ffd1ec}
 .feature .head{display:flex;align-items:center;gap:10px}
+
+/* Version compacte pour mobile */
+@media (max-width: 640px) {
+  .btn.lang .label {
+    display: none;
+  }
+  .btn.lang {
+    padding: 0 6px;
+    font-size: 18px; /* agrandir un peu le drapeau */
+  }
+}
+
