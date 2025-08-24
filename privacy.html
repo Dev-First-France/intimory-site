@@ -1,159 +1,93 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Intimory – Privacy Policy</title>
-    <meta name="description" content="Privacy Policy for Intimory, a privacy-by-design iOS app." />
-    <link rel="icon" href="./assets/logo.png?v=1">
-    <link rel="canonical" href="https://intimory.app/privacy.html">
-    <!-- <link rel="stylesheet" href="./site.css" /> -->
-    <style>
-        /* Minimal local styles if you don't extract site.css */
-        body {
-            margin: 0;
-            background: #0b0b12;
-            color: #eaeaf1;
-            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial
-        }
-
-        .container {
-            width: min(900px, 92%);
-            margin: 0 auto
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            background: #0b0b12cc;
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, .1)
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 0
-        }
-
-        .brand {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            font-weight: 700
-        }
-
-        .brand img {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            box-shadow: 0 6px 24px rgba(217, 70, 239, .35)
-        }
-
-        main {
-            padding: 36px 0
-        }
-
-        h1 {
-            font-size: clamp(26px, 4vw, 40px);
-            margin: .4em 0
-        }
-
-        h2 {
-            margin: 1.8em 0 .6em
-        }
-
-        p,
-        li {
-            color: #b8b8c9;
-            line-height: 1.7
-        }
-
-        a {
-            color: #eaeaf1
-        }
-
-        .muted {
-            color: #b8b8c9
-        }
-
-        footer {
-            padding: 32px 0 60px;
-            border-top: 1px solid rgba(255, 255, 255, .1);
-            color: #b8b8c9
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intimory – Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Intimory, a privacy-first iOS app." />
+  <link rel="icon" href="./assets/logo.png?v=1">
+  <link rel="canonical" href="https://intimory.app/privacy.html">
+  <style>
+    body{margin:0;background:#0b0b12;color:#eaeaf1;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    .container{width:min(900px,92%);margin:0 auto}
+    header{position:sticky;top:0;background:#0b0b12cc;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .brand img{width:28px;height:28px;border-radius:8px;box-shadow:0 6px 24px rgba(217,70,239,.35)}
+    main{padding:36px 0}
+    h1{font-size:clamp(26px,4vw,40px);margin:.4em 0}
+    h2{margin:1.8em 0 .6em}
+    p,li{color:#b8b8c9;line-height:1.7}
+    a{color:#eaeaf1}
+    footer{padding:32px 0 60px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8c9}
+  </style>
 </head>
-
 <body>
-    <header>
-        <div class="container nav">
-            <a href="./index.html" class="brand" style="text-decoration:none; color:inherit;">
-                <img src="./assets/logo.png" alt="Intimory logo"
-                    style="width:28px;height:28px;border-radius:8px;box-shadow:0 6px 24px rgba(217,70,239,.35)" />
-                <span>Intimory</span>
-            </a>
-            <nav><a href="./index.html">Home</a></nav>
-        </div>
-    </header>
+  <header>
+    <div class="container nav">
+      <a href="./index.html" class="brand" style="text-decoration:none;color:inherit">
+        <img src="./assets/logo.png" alt="Intimory logo" />
+        <span>Intimory</span>
+      </a>
+      <nav><a href="./index.html">Home</a></nav>
+    </div>
+  </header>
 
-    <main class="container">
-        <h1>Privacy Policy</h1>
-        <p>Last updated: <strong><span id="date"></span></strong></p>
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: <strong><span id="date"></span></strong></p>
 
-        <p>Intimory is a privacy-by-design iOS application. By default, your data is stored <strong>on your device</strong>. Optional iCloud sync <strong>(Premium)</strong> can be enabled from the app settings to keep your data across your Apple devices using your Apple ID. We (the developer) do not operate servers that store your personal data.</p>
+    <p>Intimory is an iOS application designed with <em>privacy-by-design</em>. By default, your data is stored
+       <strong>on your device</strong>. Optional iCloud sync <strong>(Premium)</strong> can be enabled in Settings to
+       keep your data across Apple devices via your Apple ID. We (the developer) do not run any servers storing your
+       personal data.</p>
 
-        <h2>Data We Collect</h2>
-        <ul>
-           <li><strong>On-device data by default.</strong> Events, partners, notes, and settings are stored locally on your iPhone. If you enable iCloud (Premium), Apple stores encrypted copies associated with your Apple ID in your private iCloud container. <strong>We cannot access your iCloud data.</strong></li>
-            <li><strong>No tracking, no ads, no analytics SDKs.</strong> Intimory does not use third-party analytics or
-                advertising frameworks.</li>
-            <li><strong>Biometrics.</strong> Face ID / Touch ID can be enabled to lock the app. Biometric templates are
-                managed by iOS and are not accessible by the app.</li>
-            <li><strong>Notifications.</strong> If you enable “Smart reminders”, the app schedules local notifications
-                on your device. No personal data is sent to external servers.</li>
-        </ul>
+    <h2>Data we process</h2>
+    <ul>
+      <li><strong>Local data by default.</strong> Events, partners, notes and settings are stored locally on your iPhone.
+          If you enable iCloud (Premium), Apple hosts encrypted copies linked to your Apple ID in your private iCloud
+          container. <strong>We have no access to your iCloud data.</strong></li>
+      <li><strong>No tracking, no ads, no third-party analytics SDKs.</strong> Intimory does not include ads or trackers.</li>
+      <li><strong>Biometrics.</strong> You can enable Face ID / Touch ID to lock the app. Biometric templates are managed
+          by iOS and are never accessible to the app.</li>
+      <li><strong>Notifications.</strong> If you enable “Smart reminders,” the app schedules local notifications on the
+          device. No personal data is sent to external servers.</li>
+    </ul>
 
-        <h2>Purchases</h2>
-        <p>Premium is sold through Apple’s in-app purchases (StoreKit). Payment processing and receipts are handled by
-            Apple. We do not receive your payment details. You can manage or cancel subscriptions from your Apple ID
-            settings.</p>
+    <h2>Purchases</h2>
+    <p>Premium is sold via Apple’s in-app purchases (StoreKit). Payment and receipts are handled by Apple.
+       We never receive your payment details. You can manage or cancel your subscription in your Apple ID account settings.</p>
 
-        <h2>Data Retention & Deletion</h2>
-        <p>All data remains on your device unless you remove the app or delete entries from within the app. If iCloud is
-            enabled, removing the app does not automatically delete iCloud data: you can manage it in iOS Settings &gt;
-            Apple ID &gt; iCloud &gt; Manage Storage.</p>
+    <h2>Retention and deletion</h2>
+    <p>Your data remains on your device unless you delete it in the app or uninstall the app.
+       If iCloud is enabled, uninstalling the app <strong>does not automatically remove</strong> your iCloud data:
+       you can manage it in iOS Settings &gt; Apple ID &gt; iCloud &gt; Manage Storage.</p>
 
-        <h2>Children</h2>
-        <p>Intimory is intended for adults and is rated 17+ on the App Store.</p>
+    <h2>Minors</h2>
+    <p>Intimory is intended for adults and is rated 17+ on the App Store.</p>
 
-        <h2>Security</h2>
-        <p>Data is stored in Apple’s secure app sandbox. You may add an app lock with Face ID / Touch ID for extra
-            protection. When using iCloud, storage and transmission security is provided by Apple.</p>
+    <h2>Security</h2>
+    <p>Data is stored in iOS sandbox. You can add a Face ID / Touch ID lock for extra protection.
+       With iCloud, storage and transport security is provided by Apple.</p>
 
-        <h2>International Transfers</h2>
-        <p>If you enable iCloud, data storage and transfers are governed by Apple’s iCloud terms and infrastructure.</p>
+    <h2>International transfers</h2>
+    <p>If you enable iCloud, storage and transfers are governed by Apple’s iCloud terms and infrastructure.</p>
 
-        <h2>Contact</h2>
-        <p>If you have questions about this policy, contact: <a
-                href="mailto:contact@intimory.app">contact@intimory.app</a>.</p>
+    <h2>Contact</h2>
+    <p>For questions, email us at: <a href="mailto:contact@intimory.app">contact@intimory.app</a>.</p>
 
-        <h2>Changes to This Policy</h2>
-        <p>We may update this policy occasionally. Continued use of the app after changes constitutes acceptance of the
-            updated policy.</p>
-    </main>
+    <h2>Changes</h2>
+    <p>This policy may evolve. Continuing to use the app after updates means acceptance of the modified version.</p>
+  </main>
 
-    <footer>
-        <div class="container">© <span id="year"></span> Intimory. All rights reserved.</div>
-    </footer>
+  <footer>
+    <div class="container">© <span id="year"></span> Intimory. All rights reserved.</div>
+  </footer>
 
-    <script>
-        const d = new Date();
-        document.getElementById('year').textContent = d.getFullYear();
-        document.getElementById('date').textContent = d.toISOString().slice(0, 10);
-    </script>
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('date').textContent = d.toISOString().slice(0,10);
+  </script>
 </body>
-
 </html>

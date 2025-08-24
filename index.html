@@ -1,571 +1,370 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Intimory – Journal intime privé sur iPhone</title>
+
+    <title>Intimory – Private intimacy journal for iPhone</title>
     <meta name="description"
-        content="Intimory est une application iOS privée par conception : enregistrez vos moments, statistiques et souvenirs en toute sécurité. Version gratuite avec limite d’événements, Premium pour tout débloquer." />
+        content="Intimory is a privacy-first iOS app: record intimate moments, partners, practices and stats securely. Data stays on-device by default, with optional iCloud sync." />
 
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Intimory – Journal intime privé sur iPhone" />
-    <meta property="og:description"
-        content="Appli iOS privée par conception : timeline, calendrier, export CSV, rappels, iCloud privé." />
-    <meta property="og:image" content="./assets/og-image.jpg?v=1" />
-    <!-- Régle ici l'URL une fois connue -->
-    <!-- <meta property="og:url" content="https://dev-first-france.github.io/intimory-site/" /> -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" href="./assets/logo.png">
-    <link rel="apple-touch-icon" href="./assets/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Canonical & International -->
     <link rel="canonical" href="https://intimory.app/" />
+    <link rel="alternate" hreflang="en" href="https://intimory.app/" />
+    <link rel="alternate" hreflang="fr" href="https://intimory.app/fr/" />
+    <link rel="alternate" hreflang="x-default" href="https://intimory.app/" />
+
+    <!-- Favicon + Touch icon -->
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:site_name" content="Intimory" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Intimory – Private intimacy journal for iPhone" />
+    <meta property="og:description"
+        content="Log your intimate moments securely. On-device data by default, optional iCloud sync, stats, reminders and CSV export." />
     <meta property="og:url" content="https://intimory.app/" />
-    <style>
-        :root {
-            --bg: #0b0b12;
-            --card: rgba(255, 255, 255, .06);
-            --card-border: rgba(255, 255, 255, .10);
-            --text: #eaeaf1;
-            --muted: #b8b8c9;
-            --accent: #d946ef;
-            --accent-600: #c026d3;
-            --accent-700: #a21caf;
-            --ok: #22c55e;
-            --warn: #f59e0b;
-        }
+    <meta property="og:image" content="https://intimory.app/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fr_FR" />
 
-        * {
-            box-sizing: border-box;
-        }
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Intimory – Private intimacy journal for iPhone" />
+    <meta name="twitter:description"
+        content="Data stays on-device by default. Optional iCloud sync, advanced stats, reminders and CSV export." />
+    <meta name="twitter:image" content="https://intimory.app/assets/og-image.jpg" />
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        }
-
-        a {
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1100px, 92%);
-            margin: 0 auto;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            backdrop-filter: blur(8px);
-            background: linear-gradient(180deg, rgba(11, 11, 18, .85), rgba(11, 11, 18, .65));
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 0;
-        }
-
-        .brand {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            font-weight: 700;
-            letter-spacing: .2px;
-        }
-
-        .brand img {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            box-shadow: 0 6px 24px rgba(217, 70, 239, .35);
-        }
-
-        .navlinks {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-            font-size: 14px;
-            color: var(--muted);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 14px;
-            border-radius: 12px;
-            border: 1px solid var(--card-border);
-            background: var(--card);
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            border-color: rgba(255, 255, 255, .18);
-        }
-
-        .btn-primary {
-            background: linear-gradient(180deg, var(--accent), var(--accent-600));
-            border-color: transparent;
-            color: white;
-            box-shadow: 0 10px 24px rgba(217, 70, 239, .35);
-        }
-
-        .btn-primary:hover {
-            filter: brightness(1.05);
-        }
-
-        /* Hero */
-        .hero {
-            padding: 64px 0 36px;
-            text-align: center;
-        }
-
-        .tag {
-            display: inline-flex;
-            gap: 8px;
-            align-items: center;
-            background: rgba(217, 70, 239, .12);
-            color: var(--accent);
-            border: 1px solid rgba(217, 70, 239, .25);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 12px;
-        }
-
-        .h1 {
-            font-size: clamp(28px, 5vw, 48px);
-            font-weight: 800;
-            line-height: 1.08;
-            margin: 18px 0 10px;
-        }
-
-        .lead {
-            color: var(--muted);
-            font-size: clamp(16px, 2.4vw, 18px);
-            max-width: 760px;
-            margin: 0 auto 22px;
-        }
-
-        .cta {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
-
-        .screenshot {
-            margin: 28px auto 0;
-            width: min(980px, 92%);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--card-border);
-            background: #0f0f17;
-            box-shadow: 0 16px 48px rgba(0, 0, 0, .45);
-            aspect-ratio: 16/9;
-            display: grid;
-            place-items: center;
-            color: var(--muted);
-        }
-
-        /* Sections */
-        section {
-            padding: 52px 0;
-        }
-
-        .section-title {
-            font-size: 20px;
-            color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: .18em;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .h2 {
-            font-size: clamp(22px, 4vw, 32px);
-            font-weight: 800;
-            margin: 0 0 14px;
-        }
-
-        .grid {
-            display: grid;
-            gap: 14px;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 16px;
-        }
-
-        .icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            background: rgba(217, 70, 239, .14);
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .muted {
-            color: var(--muted);
-        }
-
-        /* Pricing */
-        .pricing {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        }
-
-        .price-card {
-            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .04));
-            border: 1px solid var(--card-border);
-            border-radius: 18px;
-            padding: 18px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-card.premium {
-            border-color: rgba(217, 70, 239, .45);
-            box-shadow: 0 10px 36px rgba(217, 70, 239, .25);
-        }
-
-        .price {
-            font-size: 28px;
-            font-weight: 800;
-            margin: 8px 0;
-        }
-
-        .ul {
-            list-style: none;
-            padding: 0;
-            margin: 12px 0 0;
-        }
-
-        .ul li {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            margin: 8px 0;
-        }
-
-        .ul .tick {
-            color: var(--ok);
-        }
-
-        .ul .lock {
-            color: var(--muted);
-        }
-
-        /* FAQ */
-        details {
-            background: var(--card);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 12px 14px;
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        details+details {
-            margin-top: 10px;
-        }
-
-        footer {
-            padding: 32px 0 60px;
-            border-top: 1px solid var(--card-border);
-            color: var(--muted);
-        }
-
-        .footer-grid {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: 2fr 1fr 1fr;
-        }
-
-        .footer-grid a {
-            color: var(--muted);
-        }
-
-        .small {
-            font-size: 13px;
-        }
-
-        @media (max-width: 760px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
-    <!-- JSON-LD (améliore l'aperçu) -->
+    <!-- JSON-LD (SoftwareApplication) -->
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
+    "@type": "SoftwareApplication",
     "name": "Intimory",
     "operatingSystem": "iOS",
     "applicationCategory": "LifestyleApplication",
+    "url": "https://intimory.app/",
+    "image": "https://intimory.app/assets/og-image.jpg",
     "offers": [{
       "@type": "Offer",
       "price": "2.99",
-      "priceCurrency": "EUR",
-      "description": "Premium Mensuel"
+      "priceCurrency": "EUR"
     },{
       "@type": "Offer",
       "price": "24.99",
-      "priceCurrency": "EUR",
-      "description": "Premium Annuel"
+      "priceCurrency": "EUR"
     },{
       "@type": "Offer",
       "price": "39.99",
-      "priceCurrency": "EUR",
-      "description": "Lifetime"
+      "priceCurrency": "EUR"
     }]
   }
   </script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS partagé -->
+    <link rel="stylesheet" href="/site.css?v=1">
 </head>
 
 <body>
+
+    <!-- Header -->
     <header>
         <div class="container nav">
-            <a href="./index.html" class="brand" style="text-decoration:none;color:inherit;">
-                <img src="./assets/logo.png?v=1" alt="Intimory logo" />
-                <span>Intimory</span>
-            </a>
-            <nav class="navlinks" aria-label="Navigation principale">
-                <a href="#features">Fonctionnalités</a>
-                <a href="#pricing">Tarifs</a>
+            <div class="brand">
+                <a href="/"><img src="/assets/logo.png" alt="Intimory logo"></a>
+                <a href="/"><span>Intimory</span></a>
+            </div>
+            <nav class="navlinks" aria-label="Main navigation">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
-                <a class="btn" href="#legal">Légal</a>
+                <a class="btn" href="#legal">Legal</a>
+                <!-- Language switch -->
+                <a class="btn" href="/fr/index.html" aria-label="Voir le site en français">🇫🇷 FR</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <span class="tag">Privé par conception</span>
-                <h1 class="h1">Votre journal intime,<br />juste pour vous.</h1>
-                <p class="lead">Consignez vos moments, vos partenaires et vos pratiques en toute confidentialité.
-                    Visualisez votre calendrier, vos statistiques et programmez des rappels — tout reste sur votre
-                    iPhone, avec synchronisation iCloud en option.</p>
+    <!-- Hero -->
+    <div class="container hero">
+        <div class="hero-grid">
+            <div>
+                <span class="badge">Privacy-first</span>
+                <h1>Your private intimacy journal.</h1>
+                <p class="lead">Log your moments, partners and practices privately. Browse the calendar and stats, set
+                    smart reminders — everything stays on your device, with optional iCloud sync.</p>
                 <div class="cta">
-                    <a class="btn btn-primary" href="#" aria-label="Télécharger sur l’App Store (bientôt)">Télécharger
-                        (bientôt)</a>
-                    <a class="btn" href="#features">Voir les fonctionnalités</a>
-                </div>
-                <div class="screenshot">Placez ici une capture d’écran de l’app (1242×2688)</div>
-            </div>
-        </section>
-
-        <!-- FEATURES -->
-        <section id="features">
-            <div class="container">
-                <p class="section-title">Fonctionnalités</p>
-                <h2 class="h2">Tout pour suivre, en toute discrétion</h2>
-                <div class="grid" role="list">
-                    <article class="card" role="listitem">
-                        <div class="icon">🔒</div>
-                        <h3>Confidentialité par design</h3>
-                        <p class="muted">Données sur appareil, Face/Touch ID en option. Pas de tracking tiers.</p>
-                    </article>
-                    <article class="card" role="listitem">
-                        <div class="icon">🗓️</div>
-                        <h3>Calendrier mensuel</h3>
-                        <p class="muted">Parcourez vos mois avec des points sur les jours ayant un événement.</p>
-                    </article>
-                    <article class="card" role="listitem">
-                        <div class="icon">📊</div>
-                        <h3>Statistiques rapides</h3>
-                        <p class="muted">Taux de protection, moyennes, partenaires, répartition par heure…</p>
-                    </article>
-                    <article class="card" role="listitem">
-                        <div class="icon">⏰</div>
-                        <h3>Rappels intelligents</h3>
-                        <p class="muted">Notification quotidienne à l’heure de votre choix (Premium).</p>
-                    </article>
-                    <article class="card" role="listitem">
-                        <div class="icon">☁️</div>
-                        <h3>Synchronisation iCloud</h3>
-                        <p class="muted">Option Premium : retrouvez vos données entre vos appareils via votre compte
-                            iCloud personnel.</p>
-                    </article>
-                    <article class="card" role="listitem">
-                        <div class="icon">📥</div>
-                        <h3>Export CSV</h3>
-                        <p class="muted">Exportez vos données pour les analyser ou les sauvegarder (Premium).</p>
-                    </article>
+                    <a class="btn btn-primary" href="#" rel="nofollow noopener">Download (soon)</a>
+                    <a class="btn btn-ghost" href="#features">See features</a>
                 </div>
             </div>
-        </section>
+            <!-- Preview card (EN) -->
+            <div class="card glass">
+                <h3 class="card-title">Preview</h3>
 
-        <!-- PRICING -->
-        <section id="pricing">
-            <div class="container">
-                <p class="section-title">Tarifs</p>
-                <h2 class="h2">Commencez gratuitement, passez en Premium quand vous voulez</h2>
-                <div class="pricing">
-                    <!-- Gratuit -->
-                    <div class="price-card">
-                        <h3>Gratuit</h3>
-                        <div class="price">0€</div>
-                        <ul class="ul">
-                            <li><span class="tick">✔</span> Calendar & timeline</li>
-                            <li><span class="tick">✔</span> Ajout/édition d’événements</li>
-                            <li><span class="tick">✔</span> Statistiques de base</li>
-                            <li><span class="lock">✖</span> Limite d’événements (10)</li>
-                        </ul>
-                    </div>
+                <!-- Phone mockup frame -->
+                <figure class="mockup">
+                    <img src="./assets/mockuphomeen.png" alt="Intimory app screenshot (English version)" />
+                </figure>
+            </div>
+        </div>
+    </div>
 
-                    <!-- Premium Mensuel -->
-                    <div class="price-card premium">
-                        <h3>Premium Mensuel</h3>
-                        <div class="price">2,99€/mois</div>
-                        <ul class="ul">
-                            <li><span class="tick">✔</span> Événements illimités</li>
-                            <li><span class="tick">✔</span> Export CSV</li>
-                            <li><span class="tick">✔</span> Synchronisation iCloud</li>
-                            <li><span class="tick">✔</span> Rappels intelligents</li>
-                            <li><span class="tick">✔</span> Filtres & stats avancées</li>
-                        </ul>
-                        <div style="margin-top:14px">
-                            <a class="btn btn-primary" href="#" aria-disabled="true">Acheter dans l’app</a>
-                        </div>
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <h2>Key features</h2>
+            <div class="grid-3">
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- lock -->
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm3 8H9V7a3 3 0 0 1 6 0v3Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">Privacy</span>
                     </div>
+                    <h3>Private by design</h3>
+                    <p class="muted">Local data by default, secured with Face/Touch ID or PIN (optional). No advertising
+                        tracking.</p>
+                </div>
 
-                    <!-- Premium Annuel -->
-                    <div class="price-card premium">
-                        <h3>Premium Annuel</h3>
-                        <div class="price">24,99€/an</div>
-                        <ul class="ul">
-                            <li><span class="tick">✔</span> Tout du Premium</li>
-                            <li><span class="tick">✔</span> Économie ~30% vs mensuel</li>
-                        </ul>
-                        <div style="margin-top:14px">
-                            <a class="btn btn-primary" href="#" aria-disabled="true">Acheter dans l’app</a>
-                        </div>
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- calendar -->
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H2V6a2 2 0 0 1 2-2h1V3a1 1 0 1 1 2 0v1Zm15 8v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9h20Zm-6 3H8v2h8v-2Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">Calendar</span>
                     </div>
+                    <h3>Monthly calendar</h3>
+                    <p class="muted">Browse month by month, quickly see days with events.</p>
+                </div>
 
-                    <!-- Lifetime -->
-                    <div class="price-card premium">
-                        <h3>Lifetime</h3>
-                        <div class="price">39,99€ (unique)</div>
-                        <ul class="ul">
-                            <li><span class="tick">✔</span> Accès à vie à toutes les fonctionnalités Premium</li>
-                            <li><span class="tick">✔</span> Aucun paiement récurrent</li>
-                        </ul>
-                        <div style="margin-top:14px">
-                            <a class="btn btn-primary" href="#" aria-disabled="true">Acheter dans l’app</a>
-                        </div>
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- chart -->
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M4 20a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v13h15a1 1 0 1 1 0 2H4Zm5-4V9a1 1 0 0 1 2 0v7a1 1 0 1 1-2 0Zm5 0v-9a1 1 0 1 1 2 0v9a1 1 0 1 1-2 0Zm-10 0v-4a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">Statistics</span>
                     </div>
+                    <h3>Quick stats</h3>
+                    <p class="muted">Protection rate, averages, favorite times, by hour of the day, and more.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- FAQ -->
-        <section id="faq">
-            <div class="container">
-                <p class="section-title">FAQ</p>
-                <h2 class="h2">Questions fréquentes</h2>
-                <details>
-                    <summary>Où sont stockées mes données&nbsp;?</summary>
-                    <div class="muted">Sur votre iPhone par défaut. La synchronisation iCloud (facultative) utilise
-                        votre compte Apple ; nous n’y avons pas accès.</div>
-                </details>
-                <details>
-                    <summary>L’app collecte-t-elle des données&nbsp;?</summary>
-                    <div class="muted">Non. Il n’y a pas de tracking ni de publicités. Consultez la Politique de
-                        confidentialité pour les détails.</div>
-                </details>
-                <details>
-                    <summary>Comment fonctionne l’abonnement&nbsp;?</summary>
-                    <div class="muted">Les achats sont gérés par Apple (StoreKit). Vous pouvez annuler à tout moment
-                        depuis les réglages de l’App Store.</div>
-                </details>
-                <details>
-                    <summary>Sur quels appareils fonctionne Intimory&nbsp;?</summary>
-                    <div class="muted">iPhone (iOS 17+). iPad optimisé plus tard. Dark mode pris en charge.</div>
-                </details>
-            </div>
-        </section>
+            <div class="grid-3  mt-16">
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- bell -->
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 22a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2ZM4 17h16l-2-2v-4a6 6 0 1 0-12 0v4l-2 2Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">Reminders</span>
+                    </div>
+                    <h3>Smart reminders</h3>
+                    <p class="muted">Receive a daily reminder at your chosen time (Premium).</p>
+                </div>
 
-        <!-- LEGAL / FOOTER -->
-        <section id="legal">
-            <div class="container">
-                <p class="section-title">Légal</p>
-                <p class="muted small">Documents requis pour l’App Store. Les liens pointent vers des pages publiques.
-                </p>
-                <div class="grid">
-                    <div class="card">
-                        <h3>Politique de confidentialité</h3>
-                        <p class="muted">Aucune collecte côté serveur. Données locales par défaut. Synchronisation
-                            iCloud facultative.</p>
-                        <a class="btn" href="./privacy.html">Voir la politique</a>
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- cloud -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7 19a5 5 0 0 1 0-10 6 6 0 0 1 11.7 1.8A4 4 0 1 1 18 19H7Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">iCloud</span>
                     </div>
-                    <div class="card">
-                        <h3>Conditions d’utilisation (EULA)</h3>
-                        <p class="muted">Conditions, abonnements via Apple, limitation de responsabilité.</p>
-                        <a class="btn" href="./terms.html">Voir les conditions</a>
+                    <h3>iCloud sync (optional)</h3>
+                    <p class="muted">Access your data across devices with your iCloud account (Premium).</p>
+                </div>
+
+                <div class="card feature">
+                    <div class="head">
+                        <span class="feat-icon" aria-hidden="true">
+                            <!-- export / share -->
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 3 8 7h3v6h2V7h3l-4-4Zm-7 9a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-3v2h3v5H5v-5h3v-2H5Z" />
+                            </svg>
+                        </span>
+                        <span class="badge">Export</span>
                     </div>
+                    <h3>CSV Export</h3>
+                    <p class="muted">Export your data for analysis or backup (Premium).</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Pricing -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="grid-3">
+
+                <div class="card">
+                    <h3>Free</h3>
+                    <div class="price"><span class="big">0 €</span></div>
+                    <ul class="list">
+                        <li><span class="dot"></span> Up to <strong>10 events</strong></li>
+                        <li><span class="dot"></span> Calendar & logging</li>
+                        <li><span class="dot"></span> On-device data</li>
+                    </ul>
+                    <div class="cta mt-12">
+                        <a class="btn btn-ghost" href="#">Get started</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Monthly Premium</h3>
+                    <div class="price"><span class="big">2.99 €</span><span class="per">/ month</span></div>
+                    <ul class="list">
+                        <li><span class="dot"></span> Unlimited events</li>
+                        <li><span class="dot"></span> Advanced stats & filters</li>
+                        <li><span class="dot"></span> Smart reminders</li>
+                        <li><span class="dot"></span> iCloud sync (optional)</li>
+                        <li><span class="dot"></span> CSV export</li>
+                    </ul>
+                    <div class="cta mt-12">
+                        <a class="btn btn-primary" href="#" rel="nofollow noopener">Subscribe</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Yearly Premium</h3>
+                    <div class="price"><span class="big">24.99 €</span><span class="per">/ year</span></div>
+                    <ul class="list">
+                        <li><span class="dot"></span> All Premium features</li>
+                        <li><span class="dot"></span> Save money yearly</li>
+                        <li><span class="dot"></span> Cancel anytime</li>
+                    </ul>
+                    <div class="cta mt-12">
+                        <a class="btn btn-primary" href="#" rel="nofollow noopener">Subscribe</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-2" style="margin-top:16px">
+                <div class="card">
+                    <h3>Lifetime access</h3>
+                    <div class="price"><span class="big">39.99 €</span></div>
+                    <p class="muted">One-time payment. All Premium features included, forever.</p>
+                    <div class="cta mt-12">
+                        <a class="btn btn-primary" href="#" rel="nofollow noopener">Unlock lifetime</a>
+                    </div>
+                </div>
+                <div class="card legal">
+                    <h3>Legal info</h3>
+                    <p class="muted">Prices are indicative. Final pricing depends on your App Store region.</p>
+                    <small class="muted">Managed via StoreKit 2. Restore purchases available in the app.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>FAQ</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Do my data ever leave my device?</h3>
+                    <p class="muted">No, by default everything stays local. You can enable iCloud sync (Premium) if you
+                        want your data on multiple devices.</p>
+                </div>
+                <div class="card">
+                    <h3>What’s included in the free plan?</h3>
+                    <p class="muted">Calendar, logging, and browsing up to 10 events.</p>
+                </div>
+                <div class="card">
+                    <h3>What’s included in Premium?</h3>
+                    <p class="muted">Unlimited events, advanced stats & filters, smart reminders, CSV export, iCloud
+                        sync (optional).</p>
+                </div>
+                <div class="card">
+                    <h3>Can I cancel anytime?</h3>
+                    <p class="muted">Yes, from your App Store settings. You can also restore your purchases inside the
+                        app.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal / Contact -->
+    <section id="legal">
+        <div class="container">
+            <h2>Legal</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Privacy policy</h3>
+                    <p class="muted">No server collection. Local data by default. Optional iCloud sync.</p>
+                    <a class="btn" href="/privacy.html">Read policy</a>
+                </div>
+                <div class="card">
+                    <h3>Terms of use (EULA)</h3>
+                    <p class="muted">Please read our terms for usage rules of Intimory.</p>
+                    <a class="btn" href="/terms.html">Read terms</a>
+                </div>
+            </div>
+            <div class="card" style="margin-top:16px">
+                <h3>Contact us</h3>
+                <p class="muted">Got a question? Email us at <a
+                        href="mailto:contact@intimory.app">contact@intimory.app</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container footer-grid">
             <div>
-                <a href="./index.html" class="brand" style="text-decoration:none;color:inherit;">
-                    <img src="./assets/logo.png?v=1" alt="Intimory logo" />
-                    <strong>Intimory</strong>
-                </a>
-                <p class="small">© <span id="year"></span> Intimory. Tous droits réservés.</p>
+                <div class="brand">
+                    <img src="/assets/logo.png" alt="Intimory logo" />
+                    <span>Intimory</span>
+                </div>
+                <p class="small">Private intimacy journal.<br />Your data stays on-device.</p>
             </div>
             <div>
-                <p class="small"><strong>Contact</strong><br>
-                    <a href="mailto:contact@intimory.app">contact@intimory.app</a>
+                <h4>Resources</h4>
+                <p class="small"><a href="/privacy.html">Privacy policy</a><br /><a href="/terms.html">Terms of use</a>
                 </p>
-                <p class="small"><a href="./privacy.html">Politique de confidentialité</a> · <a
-                        href="./terms.html">Conditions</a></p>
             </div>
             <div>
-                <p class="small"><strong>Réseaux</strong><br>
-                    <a href="#">Instagram</a> · <a href="#">TikTok</a>
-                </p>
+                <h4>Social</h4>
+                <p class="small"><a href="#" rel="me">Instagram</a> · <a href="#" rel="me">TikTok</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        try { localStorage.setItem("langPref", "en"); } catch (e) { }
     </script>
 </body>
 
