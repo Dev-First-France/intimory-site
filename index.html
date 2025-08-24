@@ -75,6 +75,9 @@
 
     <!-- CSS partagé -->
     <link rel="stylesheet" href="/site.css?v=1">
+
+    <!-- Scripts -->
+    <script src="/site.js" defer></script>
 </head>
 
 <body>
@@ -83,18 +86,23 @@
     <header>
         <div class="container nav">
             <div class="brand">
-                <a href="/"><img src="/assets/logo.png" alt="Intimory logo"></a>
+                <a href="/">
+                    <img src="/assets/logo.png" alt="Intimory logo">
+                </a>
                 <a href="/"><span>Intimory</span></a>
             </div>
-            <nav class="navlinks" aria-label="Main navigation">
+
+            <!-- Right side: language + burger -->
+            <div class="nav-actions">
+                <a class="lang-switch" href="/fr/" aria-label="Voir le site en français">🇫🇷 FR</a>
+                <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+            </div>
+
+            <nav id="primary-nav" class="navlinks" aria-label="Primary navigation">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
                 <a class="btn" href="#legal">Legal</a>
-                <!-- Sélecteur de langue -->
-                <a class="btn lang" href="/fr/index.html" aria-label="Voir le site en français">
-                    <span class="flag">🇫🇷</span><span class="label">FR</span>
-                </a>
             </nav>
         </div>
     </header>
