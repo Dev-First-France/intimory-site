@@ -1,97 +1,186 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intimory – Politique de confidentialité</title>
-  <meta name="description" content="Politique de confidentialité d’Intimory, application iOS pensée pour la vie privée." />
-  <link rel="icon" href="/assets/logo.png?v=1">
-  <link rel="canonical" href="https://intimory.app/privacy.html">
-  <style>
-    body{margin:0;background:#0b0b12;color:#eaeaf1;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    .container{width:min(900px,92%);margin:0 auto}
-    header{position:sticky;top:0;background:#0b0b12cc;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
-    .brand img{width:28px;height:28px;border-radius:8px;box-shadow:0 6px 24px rgba(217,70,239,.35)}
-    main{padding:36px 0}
-    h1{font-size:clamp(26px,4vw,40px);margin:.4em 0}
-    h2{margin:1.8em 0 .6em}
-    p,li{color:#b8b8c9;line-height:1.7}
-    a{color:#eaeaf1}
-    .muted{color:#b8b8c9}
-    footer{padding:32px 0 60px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8c9}
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intimory – Politique de confidentialité</title>
+    <meta name="description"
+        content="Politique de confidentialité d’Intimory, application iOS pensée pour la vie privée." />
+    <link rel="icon" href="/assets/logo.png?v=1">
+    <link rel="canonical" href="https://intimory.app/privacy.html">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTFM3S7ZV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GTFM3S7ZV4');
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0b0b12;
+            color: #eaeaf1;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial
+        }
+
+        .container {
+            width: min(900px, 92%);
+            margin: 0 auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #0b0b12cc;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0
+        }
+
+        .brand {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 700
+        }
+
+        .brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(217, 70, 239, .35)
+        }
+
+        main {
+            padding: 36px 0
+        }
+
+        h1 {
+            font-size: clamp(26px, 4vw, 40px);
+            margin: .4em 0
+        }
+
+        h2 {
+            margin: 1.8em 0 .6em
+        }
+
+        p,
+        li {
+            color: #b8b8c9;
+            line-height: 1.7
+        }
+
+        a {
+            color: #eaeaf1
+        }
+
+        .muted {
+            color: #b8b8c9
+        }
+
+        footer {
+            padding: 32px 0 60px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            color: #b8b8c9
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <a href="./index.html" class="brand" style="text-decoration:none;color:inherit">
-        <img src="/assets/logo.png" alt="Logo Intimory" />
-        <span>Intimory</span>
-      </a>
-      <nav><a href="./index.html">Accueil</a></nav>
-    </div>
-  </header>
+    <header>
+        <div class="container nav">
+            <a href="./index.html" class="brand" style="text-decoration:none;color:inherit">
+                <img src="/assets/logo.png" alt="Logo Intimory" />
+                <span>Intimory</span>
+            </a>
+            <nav><a href="./index.html">Accueil</a></nav>
+        </div>
+    </header>
 
-  <main class="container">
-    <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour&nbsp;: <strong><span id="date"></span></strong></p>
+    <main class="container">
+        <h1>Politique de confidentialité</h1>
+        <p>Dernière mise à jour&nbsp;: <strong><span id="date"></span></strong></p>
 
-    <p>Intimory est une application iOS conçue selon le principe du <em>privacy-by-design</em>. Par défaut, vos données
-       sont stockées <strong>sur votre appareil</strong>. La synchronisation iCloud <strong>(Premium)</strong> est
-       <strong>optionnelle</strong> et peut être activée dans les réglages pour retrouver vos données sur vos appareils
-       Apple via votre identifiant Apple. Nous (l’éditeur) n’exploitons aucun serveur stockant vos données personnelles.</p>
+        <p>Intimory est une application iOS conçue selon le principe du <em>privacy-by-design</em>. Par défaut, vos
+            données
+            sont stockées <strong>sur votre appareil</strong>. La synchronisation iCloud <strong>(Premium)</strong> est
+            <strong>optionnelle</strong> et peut être activée dans les réglages pour retrouver vos données sur vos
+            appareils
+            Apple via votre identifiant Apple. Nous (l’éditeur) n’exploitons aucun serveur stockant vos données
+            personnelles.
+        </p>
 
-    <h2>Données que nous traitons</h2>
-    <ul>
-      <li><strong>Données locales par défaut.</strong> Événements, partenaires, notes et réglages sont stockés en local
-          sur votre iPhone. Si vous activez iCloud (Premium), Apple héberge des copies chiffrées, liées à votre Apple ID,
-          dans votre conteneur iCloud privé. <strong>Nous n’avons pas accès à vos données iCloud.</strong></li>
-      <li><strong>Sans pistage, sans publicité, sans SDK d’analytics tiers.</strong> Intimory n’intègre ni régie
-          publicitaire ni bibliothèque de suivi.</li>
-      <li><strong>Biométrie.</strong> Vous pouvez activer Face ID / Touch ID pour verrouiller l’app. Les gabarits
-          biométriques sont gérés par iOS et ne sont pas accessibles à l’app.</li>
-      <li><strong>Notifications.</strong> Si vous activez les «&nbsp;Rappels intelligents&nbsp;», l’app programme des
-          notifications locales sur l’appareil. Aucune donnée personnelle n’est envoyée à des serveurs externes.</li>
-    </ul>
+        <h2>Données que nous traitons</h2>
+        <ul>
+            <li><strong>Données locales par défaut.</strong> Événements, partenaires, notes et réglages sont stockés en
+                local
+                sur votre iPhone. Si vous activez iCloud (Premium), Apple héberge des copies chiffrées, liées à votre
+                Apple ID,
+                dans votre conteneur iCloud privé. <strong>Nous n’avons pas accès à vos données iCloud.</strong></li>
+            <li><strong>Sans pistage, sans publicité, sans SDK d’analytics tiers.</strong> Intimory n’intègre ni régie
+                publicitaire ni bibliothèque de suivi.</li>
+            <li><strong>Biométrie.</strong> Vous pouvez activer Face ID / Touch ID pour verrouiller l’app. Les gabarits
+                biométriques sont gérés par iOS et ne sont pas accessibles à l’app.</li>
+            <li><strong>Notifications.</strong> Si vous activez les «&nbsp;Rappels intelligents&nbsp;», l’app programme
+                des
+                notifications locales sur l’appareil. Aucune donnée personnelle n’est envoyée à des serveurs externes.
+            </li>
+        </ul>
 
-    <h2>Achats</h2>
-    <p>Le Premium est vendu via les achats intégrés d’Apple (StoreKit). Le paiement et les reçus sont gérés par Apple.
-       Nous ne recevons pas vos informations de paiement. Vous pouvez gérer ou résilier votre abonnement depuis les
-       réglages de votre identifiant Apple.</p>
+        <h2>Achats</h2>
+        <p>Le Premium est vendu via les achats intégrés d’Apple (StoreKit). Le paiement et les reçus sont gérés par
+            Apple.
+            Nous ne recevons pas vos informations de paiement. Vous pouvez gérer ou résilier votre abonnement depuis les
+            réglages de votre identifiant Apple.</p>
 
-    <h2>Conservation et suppression</h2>
-    <p>Vos données restent sur votre appareil, sauf si vous les supprimez dans l’app ou désinstallez l’app.
-       Si iCloud est activé, la suppression de l’app <strong>ne supprime pas</strong> automatiquement les données iCloud&nbsp;:
-       vous pouvez les gérer dans Réglages iOS &gt; Identifiant Apple &gt; iCloud &gt; Gérer le stockage.</p>
+        <h2>Conservation et suppression</h2>
+        <p>Vos données restent sur votre appareil, sauf si vous les supprimez dans l’app ou désinstallez l’app.
+            Si iCloud est activé, la suppression de l’app <strong>ne supprime pas</strong> automatiquement les données
+            iCloud&nbsp;:
+            vous pouvez les gérer dans Réglages iOS &gt; Identifiant Apple &gt; iCloud &gt; Gérer le stockage.</p>
 
-    <h2>Mineurs</h2>
-    <p>Intimory s’adresse aux adultes et est classée 17+ sur l’App Store.</p>
+        <h2>Mineurs</h2>
+        <p>Intimory s’adresse aux adultes et est classée 17+ sur l’App Store.</p>
 
-    <h2>Sécurité</h2>
-    <p>Les données sont stockées dans l’espace sécurisé (sandbox) d’iOS. Vous pouvez ajouter un verrouillage par Face ID /
-       Touch ID pour une protection supplémentaire. Avec iCloud, la sécurité du stockage et du transport est assurée par Apple.</p>
+        <h2>Sécurité</h2>
+        <p>Les données sont stockées dans l’espace sécurisé (sandbox) d’iOS. Vous pouvez ajouter un verrouillage par
+            Face ID /
+            Touch ID pour une protection supplémentaire. Avec iCloud, la sécurité du stockage et du transport est
+            assurée par Apple.</p>
 
-    <h2>Transferts internationaux</h2>
-    <p>Si vous activez iCloud, le stockage et les transferts sont régis par les conditions d’iCloud et l’infrastructure d’Apple.</p>
+        <h2>Transferts internationaux</h2>
+        <p>Si vous activez iCloud, le stockage et les transferts sont régis par les conditions d’iCloud et
+            l’infrastructure d’Apple.</p>
 
-    <h2>Contact</h2>
-    <p>Pour toute question, écrivez-nous à&nbsp;: <a href="mailto:contact@intimory.app">contact@intimory.app</a>.</p>
+        <h2>Contact</h2>
+        <p>Pour toute question, écrivez-nous à&nbsp;: <a href="mailto:contact@intimory.app">contact@intimory.app</a>.
+        </p>
 
-    <h2>Modifications</h2>
-    <p>Cette politique peut évoluer. Poursuivre l’utilisation de l’application après une mise à jour vaut acceptation de
-       la version modifiée.</p>
-  </main>
+        <h2>Modifications</h2>
+        <p>Cette politique peut évoluer. Poursuivre l’utilisation de l’application après une mise à jour vaut
+            acceptation de
+            la version modifiée.</p>
+    </main>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Intimory. Tous droits réservés.</div>
-  </footer>
+    <footer>
+        <div class="container">© <span id="year"></span> Intimory. Tous droits réservés.</div>
+    </footer>
 
-  <script>
-    const d = new Date();
-    document.getElementById('year').textContent = d.getFullYear();
-    document.getElementById('date').textContent = d.toISOString().slice(0,10);
-  </script>
+    <script>
+        const d = new Date();
+        document.getElementById('year').textContent = d.getFullYear();
+        document.getElementById('date').textContent = d.toISOString().slice(0, 10);
+    </script>
 </body>
+
 </html>
