@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Opening Intimory on the App Store…</title>
+    <meta name="description" content="Redirecting to Intimory on the App Store." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="canonical" href="https://intimory.app/go/" />
+
+    <!-- Favicon + Touch icon -->
+    <link rel="icon" href="/assets/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+
+    <!-- Styles (reprend le design du site) -->
+    <link rel="stylesheet" href="/site.css?v=1" />
+
+    <!-- Destination avec UTM (à personnaliser par campagne) -->
+    <script>
+        // Par défaut (si pas d’UTM fournis via ?utm_source=… sur /go/)
+        const DEFAULT_DEST =
+            "https://apps.apple.com/app/intimory/id6751414088?utm_source=site&utm_medium=redirect&utm_campaign=meta_generic";
+
+        function buildDestUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const dest = new URL(DEFAULT_DEST);
+            ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(k => {
+                if (params.has(k)) dest.searchParams.set(k, params.get(k));
+            });
+            return dest.toString();
+        }
+        const DEST_URL = buildDestUrl();
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+            s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '768080352778758');
+        fbq('track', 'PageView');
+        // Événement additionnel utile pour la mesure (avant redirection)
+        fbq('track', 'ViewContent', { content_name: 'App Store Redirect' });
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=768080352778758&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTFM3S7ZV4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GTFM3S7ZV4');
+    </script>
+
+    <!-- Fallback meta refresh si JS est bloqué (lien sans UTM) -->
+    <meta http-equiv="refresh" content="2;url=https://apps.apple.com/app/id6751414088" />
+</head>
+
+<body>
+    <div class="container hero" style="text-align:center; padding:60px 20px;">
+        <img src="/assets/logo.png" alt="Intimory logo" width="84"
+            style="margin-bottom:18px;border-radius:16px;box-shadow:0 10px 28px rgba(217,70,239,.35)" />
+        <h1 style="margin:0 0 8px">Redirecting to Intimory…</h1>
+        <p class="lead" style="margin:0 0 16px">You’ll be taken to the App Store in a moment.</p>
+        <p><a id="dl" class="btn btn-primary" href="#" rel="noopener">Open in App Store</a></p>
+    </div>
+
+    <script>
+        const a = document.getElementById('dl');
+        a.href = DEST_URL;
+        // Petite latence pour laisser le temps aux pixels de se déclencher
+        setTimeout(() => { window.location.href = DEST_URL; }, 200);
+        // Tracking custom si GA/Pixel sont chargés
+        if (typeof fbq !== "undefined") fbq('track', 'RedirectGo');
+        if (typeof gtag !== "undefined") gtag('event', 'redirect_go', { event_category: 'navigation' });
+    </script>
+</body>
+
+</html>
