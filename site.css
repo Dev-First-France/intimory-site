@@ -94,6 +94,17 @@ footer{border-top:1px solid var(--border);margin-top:30px}
   .grid-3,.grid-2{grid-template-columns:1fr}
 }
 
+@media (max-width:768px){
+  main.article{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  main.container{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+}
+
 /* ---- Phone mockup ---- */
 .mockup{
   aspect-ratio:390/844;width:100%;margin:0;border-radius:12px;overflow:hidden;
@@ -173,4 +184,3 @@ footer{border-top:1px solid var(--border);margin-top:30px}
 .nav-actions .lang-switch:hover {
   background: rgba(255,255,255,0.15);
 }
-

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Blog – Intimory</title>
+  <meta name="description" content="Articles autour du journal d’intimité, de la confidentialité, du suivi de cycle et des statistiques utiles." />
+
+  <!-- Canonical & International -->
+  <link rel="canonical" href="https://intimory.app/fr/blog/" />
+  <link rel="alternate" hreflang="fr" href="https://intimory.app/fr/blog/" />
+  <link rel="alternate" hreflang="en" href="https://intimory.app/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://intimory.app/blog/" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Intimory" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog Intimory" />
+  <meta property="og:description" content="Guides et conseils pour un suivi intime respectueux de votre vie privée." />
+  <meta property="og:url" content="https://intimory.app/fr/blog/" />
+  <meta property="og:image" content="https://intimory.app/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/site.css?v=1" />
+</head>
+<body>
+
+  <!-- Header (light version) -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a href="/fr/"><img src="/assets/logo.png" alt="Logo Intimory" /></a>
+        <a href="/fr/"><span>Intimory</span></a>
+      </div>
+      <div class="nav-actions">
+        <a class="lang-switch" href="/blog/" aria-label="View the blog in English">🇬🇧 EN</a>
+        <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      </div>
+      <nav id="primary-nav" class="navlinks" aria-label="Navigation principale">
+        <a href="/fr/#fonctionnalites">Fonctionnalités</a>
+        <a href="/fr/#tarifs">Tarifs</a>
+        <a href="/fr/blog/" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Télécharger</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding:48px 0 28px">
+    <h1>Blog</h1>
+    <p class="muted" style="max-width:720px">
+      Guides et conseils autour du journal d’intimité, de la vie de couple, du suivi de cycle et des statistiques utiles — avec un vrai respect de votre confidentialité.
+    </p>
+
+    <section class="grid-2" style="margin-top:18px">
+      <!-- Carte #1 (exemple) -->
+      <article class="card">
+        <h2 style="margin:0 0 6px">
+          <a href="/fr/blog/guide-cycle-menstruel/">Comprendre son cycle menstruel</a>
+        </h2>
+        <p class="muted">Les quatre phases du cycle, comment observer ses tendances et rester totalement propriétaire de ses données.</p>
+        <small class="muted">12 oct. 2025 · 8 min</small>
+      </article>
+
+      <!-- Carte #2 (exemple) -->
+      <article class="card">
+        <h2 style="margin:0 0 6px">
+          <a href="/fr/blog/suivi-cycle-prive/">Suivre son cycle en toute confidentialité</a>
+        </h2>
+        <p class="muted">Pourquoi la vie privée compte et comment suivre règles et ovulation sans partager vos données.</p>
+        <small class="muted">21 sept. 2025 · 6 min</small>
+      </article>
+
+      <!-- Carte #3 (exemple) -->
+      <article class="card">
+        <h2 style="margin:0 0 6px">
+          <a href="/fr/blog/statistiques-intimite-couple/">Des statistiques utiles pour mieux se connaître en couple</a>
+        </h2>
+        <p class="muted">Fréquence, moments favoris, tendances : comment des métriques simples améliorent la communication.</p>
+        <small class="muted">28 sept. 2025 · 5 min</small>
+      </article>
+
+      <!-- Duplique ces cartes pour chaque nouvel article -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand"><img src="/assets/logo.png" alt="Intimory" /><span>Intimory</span></div>
+      <div><h4>Ressources</h4><p class="small"><a href="/fr/privacy.html">Politique de confidentialité</a><br><a href="/fr/terms.html">Conditions d’utilisation</a></p></div>
+      <div><h4>Réseaux</h4><p class="small"><a href="https://instagram.com/intimory.app" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+  </footer>
+
+  <script>try{localStorage.setItem("langPref","fr")}catch(e){}</script>
+  <script>
+    document.querySelector(".burger")?.addEventListener("click", () => {
+      document.getElementById("primary-nav")?.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
