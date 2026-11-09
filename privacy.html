@@ -4,114 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intimory – Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Intimory, a privacy-first iOS app." />
-  <link rel="icon" href="/assets/logo.png?v=1">
-  <link rel="canonical" href="https://intimory.app/privacy.html">
-  <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTFM3S7ZV4"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GTFM3S7ZV4');
-    </script>
-    
+  <meta name="description" content="Intimory – Privacy Policy" />
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="canonical" href="https://intimory.app/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://intimory.app/privacy.html" />
+  <link rel="alternate" hreflang="fr" href="https://intimory.app/fr/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://intimory.app/es/privacy.html" />
   <style>
     body{margin:0;background:#0b0b12;color:#eaeaf1;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    .container{width:min(900px,92%);margin:0 auto}
+    .container{width:min(860px,92%);margin:0 auto}
     header{position:sticky;top:0;background:#0b0b12cc;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.1)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;color:inherit;text-decoration:none}
     .brand img{width:28px;height:28px;border-radius:8px;box-shadow:0 6px 24px rgba(217,70,239,.35)}
+    nav a{margin-left:14px;color:#b8b8c9}
     main{padding:36px 0}
     h1{font-size:clamp(26px,4vw,40px);margin:.4em 0}
-    h2{margin:1.8em 0 .6em}
+    h2{margin:1.8em 0 .6em;font-size:20px}
     p,li{color:#b8b8c9;line-height:1.7}
-    a{color:#eaeaf1}
-    footer{padding:32px 0 60px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8c9}
+    li{margin:6px 0}
+    strong{color:#eaeaf1}
+    a{color:#ffd1ec}
+    .summary{border:1px solid rgba(233,74,166,.4);background:rgba(233,74,166,.1);padding:14px 16px;border-radius:12px;color:#fff}
+    footer{padding:32px 0 60px;border-top:1px solid rgba(255,255,255,.1);color:#b8b8c9;font-size:14px}
+    footer button{background:none;border:0;color:#b8b8c9;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <a href="./index.html" class="brand" style="text-decoration:none;color:inherit">
-        <img src="/assets/logo.png" alt="Intimory logo" />
-        <span>Intimory</span>
-      </a>
-      <nav><a href="./index.html">Home</a></nav>
+      <a href="/" class="brand"><img src="/assets/logo.png" alt="" /><span>Intimory</span></a>
+      <nav><a href="/">Home</a> <a href="/fr/privacy.html" hreflang="fr">FR</a> <a href="/es/privacy.html" hreflang="es">ES</a></nav>
     </div>
   </header>
-
   <main class="container">
     <h1>Privacy Policy</h1>
-    <p>Last updated: <strong><span id="date"></span></strong></p>
-
-    <p>Intimory is an iOS application designed with <em>privacy-by-design</em>. By default, your data is stored
-       <strong>on your device</strong>. Optional iCloud sync <strong>(Premium)</strong> can be enabled in Settings to
-       keep your data across Apple devices via your Apple ID. We (the developer) do not run any servers storing your
-       personal data.</p>
-
-    <h2>Data we process</h2>
-    <ul>
-      <li><strong>Local data by default.</strong> Events, partners, notes and settings are stored locally on your iPhone.
-          If you enable iCloud (Premium), Apple hosts encrypted copies linked to your Apple ID in your private iCloud
-          container. <strong>We have no access to your iCloud data.</strong></li>
-      <li><strong>No tracking, no ads, no third-party analytics SDKs.</strong> Intimory does not include ads or trackers.</li>
-      <li><strong>Biometrics.</strong> You can enable Face ID / Touch ID to lock the app. Biometric templates are managed
-          by iOS and are never accessible to the app.</li>
-      <li><strong>Notifications.</strong> If you enable “Smart reminders,” the app schedules local notifications on the
-          device. No personal data is sent to external servers.</li>
-    </ul>
-
-    <h2>Purchases</h2>
-    <p>Premium is sold via Apple’s in-app purchases (StoreKit). Payment and receipts are handled by Apple.
-       We never receive your payment details. You can manage or cancel your subscription in your Apple ID account settings.</p>
-
+    <p>Last updated: <strong>November 9, 2026</strong></p>
+    <p class="summary">In short: the Intimory app collects no data. The App Store privacy label says “Data Not Collected”.</p>
+    <p>Intimory is an iOS app published by Dev First. It is built so that we never see your data: there is no account, no server and no tracking in the app. This policy explains what the app stores, where, and what our website does.</p>
+    <h2>What the app stores, and where</h2>
+    <p>Everything you enter (moments, partners and their profiles, practices, notes, screenings, wishes, cycle data and settings) is stored on your iPhone, inside the app’s private storage protected by iOS.</p>
+    <p>If you turn on iCloud sync (free, in Settings), this data is also stored in your own private iCloud database, linked to your Apple Account and managed by Apple. We have no access to it.</p>
+    <h2>Apple features used on your device</h2>
+    <ul><li><strong>Face ID, Touch ID or PIN</strong>: unlocking happens on the device. The app never receives biometric data; your PIN is stored as a hash on the device.</li><li><strong>Notifications</strong>: reminders (screening, PrEP, cycle, daily reminder) are scheduled locally on the device and use neutral text.</li><li><strong>Siri and Shortcuts</strong>: “Log a moment in Intimory” only opens the app. Voice requests are handled by Apple under Apple’s privacy policy.</li><li><strong>Apple Health</strong> (optional, Premium): with your permission, the app writes your moments as “sexual activity” in Health. You can revoke this at any time in the Health app.</li><li><strong>City search</strong> (partner profiles): the city name you type is sent to Apple Maps to find the place. We do not receive it.</li><li><strong>Purchases</strong>: subscriptions and the lifetime purchase are handled by Apple (StoreKit). We never see your payment details.</li></ul>
+    <h2>No tracking in the app</h2>
+    <p>The app contains no advertising, no analytics and no third-party SDK. It does not use the advertising identifier and does not share anything with third parties.</p>
+    <h2>Sensitive data</h2>
+    <p>Your sex life and sexual health are sensitive data. Because they stay on your device (and, if you choose, in your private iCloud), they remain under your sole control. Use the Face ID or PIN lock, the discreet icon and the option that hides names for extra privacy.</p>
     <h2>Retention and deletion</h2>
-    <p>Your data remains on your device unless you delete it in the app or uninstall the app.
-       If iCloud is enabled, uninstalling the app <strong>does not automatically remove</strong> your iCloud data:
-       you can manage it in iOS Settings &gt; Apple ID &gt; iCloud &gt; Manage Storage.</p>
-
-    <h2>Minors</h2>
-    <p>Intimory is intended for adults and is rated 17+ on the App Store.</p>
-
-    <h2>Security</h2>
-    <p>Data is stored in iOS sandbox. You can add a Face ID / Touch ID lock for extra protection.
-       With iCloud, storage and transport security is provided by Apple.</p>
-
-
-    <h2>International transfers</h2>
-    <p>If you enable iCloud, storage and transfers are governed by Apple’s iCloud terms and infrastructure.</p>
-
-    <h2>Consent & Analytics</h2>
-    <p>
-      Intimory may use Firebase Analytics only to collect anonymous usage statistics, if you have given your explicit consent.
-      These statistics are used exclusively to improve the app and the user experience. 
-      They are never used for advertising purposes or shared with third parties.
-    </p>
-    <p>
-      You can accept or decline this data sharing during the initial setup, and change your choice at any time in the app settings.
-    </p>
-    <p>
-      Without consent, no data is transmitted. 
-      With consent, the collected events remain strictly anonymous and contain no personal or sensitive data.
-    </p>
-
+    <p>You can delete a moment, a partner, a screening or a wish at any time, or erase everything in Settings &gt; Delete all data. This also removes the entries the app wrote to Apple Health.</p>
+    <p>Uninstalling the app deletes the data stored on the device. If iCloud sync is on, your iCloud copy is kept until you delete it in iOS Settings &gt; your name &gt; iCloud &gt; Manage Storage.</p>
+    <h2>Our website</h2>
+    <p>The intimory.app website measures its audience with Google Analytics and the Meta Pixel <strong>only if you accept</strong> in the cookie banner. If you refuse or do not answer, no tracker is loaded. You can change your choice at any time with the “Cookie settings” link at the bottom of each page.</p>
+    <p>With your consent, Google and Meta receive technical data about your visit (pages viewed, device, approximate location, cookie identifiers) under their own policies. No data from the app is ever sent to the website.</p>
+    <h2>Age</h2>
+    <p>Intimory is intended for adults. It is rated 16+ on the App Store; do not use it if you are under the legal age in your country.</p>
+    <h2>Your rights</h2>
+    <p>As we hold no data from the app, there is nothing for us to access, correct or delete: you control it directly in the app. For the website, you can withdraw your consent at any time. You may also contact us, or lodge a complaint with your data protection authority (in France, the CNIL).</p>
     <h2>Contact</h2>
-    <p>For questions, email us at: <a href="mailto:contact@intimory.app">contact@intimory.app</a>.</p>
-
+    <p>Questions about privacy: <a href="mailto:contact@intimory.app">contact@intimory.app</a>.</p>
     <h2>Changes</h2>
-    <p>This policy may evolve. Continuing to use the app after updates means acceptance of the modified version.</p>
+    <p>We may update this policy. The date at the top shows the latest version.</p>
   </main>
-
   <footer>
-    <div class="container">© <span id="year"></span> Intimory. All rights reserved.</div>
+    <div class="container">© 2026 Dev First · Intimory · <button data-cookie-settings>Cookie settings</button></div>
   </footer>
-
-  <script>
-    const d = new Date();
-    document.getElementById('year').textContent = d.getFullYear();
-    document.getElementById('date').textContent = d.toISOString().slice(0,10);
-  </script>
+  <div id="cookie-root"></div>
+  <script src="/app-analytics.js?v=2" defer></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://intimory.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://intimory.app/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://intimory.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://intimory.app/es/"/></url>
+  <url><loc>https://intimory.app/fr/</loc></url>
+  <url><loc>https://intimory.app/es/</loc></url>
+  <url><loc>https://intimory.app/privacy.html</loc></url>
+  <url><loc>https://intimory.app/fr/privacy.html</loc></url>
+  <url><loc>https://intimory.app/es/privacy.html</loc></url>
+  <url><loc>https://intimory.app/terms.html</loc></url>
+  <url><loc>https://intimory.app/fr/terms.html</loc></url>
+  <url><loc>https://intimory.app/es/terms.html</loc></url>
+  <url><loc>https://intimory.app/blog/</loc></url>
+  <url><loc>https://intimory.app/blog/menstrual-cycle-guide/</loc></url>
+  <url><loc>https://intimory.app/blog/private-cycle-tracking/</loc></url>
+  <url><loc>https://intimory.app/blog/intimacy-stats-couples/</loc></url>
+  <url><loc>https://intimory.app/fr/blog/</loc></url>
+  <url><loc>https://intimory.app/fr/blog/guide-cycle-menstruel/</loc></url>
+  <url><loc>https://intimory.app/fr/blog/suivi-cycle-prive/</loc></url>
+  <url><loc>https://intimory.app/fr/blog/statistiques-intimite-couple/</loc></url>
+</urlset>

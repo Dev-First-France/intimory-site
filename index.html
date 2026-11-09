@@ -1,470 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intimory – Private sex diary &amp; partner tracker for iPhone</title>
+  <meta name="description" content="Log every intimate moment in seconds, keep a private profile for each partner, beat your records, unlock trophies and stay on top of your sexual health. No account, no tracking: your data stays on your iPhone." />
+  <link rel="canonical" href="https://intimory.app/" />
+  <link rel="alternate" hreflang="en" href="https://intimory.app/" />
+  <link rel="alternate" hreflang="fr" href="https://intimory.app/fr/" />
+  <link rel="alternate" hreflang="es" href="https://intimory.app/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://intimory.app/" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <meta name="theme-color" content="#0c0c11" />
 
-    <title>Intimory – Private intimacy journal for iPhone</title>
-    <meta name="description"
-        content="Intimory is a privacy-first iOS app: record intimate moments, partners, practices and stats securely. Data stays on-device by default, with optional iCloud sync." />
+  <meta property="og:site_name" content="Intimory" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Intimory – Every partner, every moment, every record" />
+  <meta property="og:description" content="Log every intimate moment in seconds, keep a private profile for each partner, beat your records, unlock trophies and stay on top of your sexual health. No account, no tracking: your data stays on your iPhone." />
+  <meta property="og:url" content="https://intimory.app/" />
+  <meta property="og:image" content="https://intimory.app/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Intimory – Every partner, every moment, every record" />
+  <meta name="twitter:description" content="Log every intimate moment in seconds, keep a private profile for each partner, beat your records, unlock trophies and stay on top of your sexual health. No account, no tracking: your data stays on your iPhone." />
+  <meta name="twitter:image" content="https://intimory.app/assets/og-image.jpg" />
+  <meta name="apple-itunes-app" content="app-id=6751414088" />
+  <meta property="al:ios:app_store_id" content="6751414088" />
+  <meta property="al:ios:app_name" content="Intimory" />
 
-    <!-- Canonical & International -->
-    <link rel="canonical" href="https://intimory.app/" />
-    <link rel="alternate" hreflang="en" href="https://intimory.app/" />
-    <link rel="alternate" hreflang="fr" href="https://intimory.app/fr/" />
-    <link rel="alternate" hreflang="x-default" href="https://intimory.app/" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Intimory", "operatingSystem": "iOS", "applicationCategory": "LifestyleApplication", "url": "https://intimory.app/", "image": "https://intimory.app/assets/og-image.jpg", "description": "Log every intimate moment in seconds, keep a private profile for each partner, beat your records, unlock trophies and stay on top of your sexual health. No account, no tracking: your data stays on your iPhone.", "inLanguage": "en", "offers": [{"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, {"@type": "Offer", "price": "2.99", "priceCurrency": "EUR"}, {"@type": "Offer", "price": "24.99", "priceCurrency": "EUR"}, {"@type": "Offer", "price": "39.99", "priceCurrency": "EUR"}]}</script>
 
-    <!-- Favicon + Touch icon -->
-    <link rel="icon" href="/assets/logo.png" type="image/png" />
-    <link rel="apple-touch-icon" href="/assets/logo.png" />
-
-    <!-- Open Graph / Social -->
-    <meta property="og:site_name" content="Intimory" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Intimory – Private intimacy journal for iPhone" />
-    <meta property="og:description"
-        content="Log your intimate moments securely. On-device data by default, optional iCloud sync, stats, reminders and CSV export." />
-    <meta property="og:url" content="https://intimory.app/" />
-    <meta property="og:image" content="https://intimory.app/assets/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="fr_FR" />
-    <meta name="apple-itunes-app" content="app-id=6751414088">
-    <meta property="al:ios:app_store_id" content="6751414088">
-    <meta property="al:ios:app_name" content="Intimory">
-
-    <meta name="twitter:app:name:iphone" content="Intimory">
-    <meta name="twitter:app:id:iphone" content="6751414088">
-
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Intimory – Private intimacy journal for iPhone" />
-    <meta name="twitter:description"
-        content="Data stays on-device by default. Optional iCloud sync, advanced stats, reminders and CSV export." />
-    <meta name="twitter:image" content="https://intimory.app/assets/og-image.jpg" />
-
-
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '768080352778758');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=768080352778758&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTFM3S7ZV4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-GTFM3S7ZV4');
-    </script>
-
-    <!-- JSON-LD (SoftwareApplication) -->
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Intimory",
-    "operatingSystem": "iOS",
-    "applicationCategory": "LifestyleApplication",
-    "url": "https://intimory.app/",
-    "image": "https://intimory.app/assets/og-image.jpg",
-    "offers": [{
-      "@type": "Offer",
-      "price": "2.99",
-      "priceCurrency": "EUR"
-    },{
-      "@type": "Offer",
-      "price": "24.99",
-      "priceCurrency": "EUR"
-    },{
-      "@type": "Offer",
-      "price": "39.99",
-      "priceCurrency": "EUR"
-    }]
-  }
-  </script>
-
-    <!-- Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Polices -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- CSS partagé -->
-    <link rel="stylesheet" href="/site.css?v=1">
-
-    <!-- Scripts -->
-    <script src="/site.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css?v=2">
+  <script src="/site.js" defer></script>
 </head>
 
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="container nav">
-            <div class="brand">
-                <a href="/">
-                    <img src="/assets/logo.png" alt="Intimory logo">
-                </a>
-                <a href="/"><span>Intimory</span></a>
-            </div>
-
-            <!-- Right side: language + burger -->
-            <div class="nav-actions">
-                <a class="lang-switch" href="/fr/" aria-label="Voir le site en français">🇫🇷 FR</a>
-                <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
-            </div>
-
-            <nav id="primary-nav" class="navlinks" aria-label="Primary navigation">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
-                <a href="/blog">Blog</a>
-                <a class="btn" href="#legal">Legal</a>
-                <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Download</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <div class="container hero">
-        <div class="hero-grid">
-            <div style="padding-left: 20px;">
-                <span class="badge">Privacy-first</span>
-                <h1>Your private intimacy journal.</h1>
-                <p class="lead">Log your moments, partners and practices privately. Browse the calendar and stats, set
-                    smart reminders — everything stays on your device, with optional iCloud sync.</p>
-                <div class="cta">
-                    <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088"
-                        aria-label="Download Intimory on the App Store" rel="noopener">
-                        Download on the App Store
-                    </a>
-                    <a class="btn btn-ghost" href="#features">See features</a>
-                </div>
-            </div>
-            <!-- Preview card (EN) -->
-            <div class="card glass">
-                <h3 class="card-title">Preview</h3>
-
-                <!-- Phone mockup frame -->
-                <figure class="mockup">
-                    <img src="./assets/mockuphomeen.png" alt="Intimory app screenshot (English version)" />
-                </figure>
-            </div>
-        </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <a href="/"><img src="/assets/logo.png" alt="Intimory" width="28" height="28"></a>
+        <a href="/"><span>Intimory</span></a>
+      </div>
+      <div class="nav-actions">
+        <a class="lang-switch" href="/fr/" hreflang="fr">🇫🇷 FR</a> <a class="lang-switch" href="/es/" hreflang="es">🇪🇸 ES</a>
+        <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      </div>
+      <nav id="primary-nav" class="navlinks">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Download</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Features -->
-    <section id="features">
-        <div class="container">
-            <h2>Key features</h2>
-
-            <!-- Row 1 -->
-            <div class="grid-3">
-                <!-- Privacy -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- lock -->
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm3 8H9V7a3 3 0 0 1 6 0v3Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Privacy</span>
-                    </div>
-                    <h3>Private by design</h3>
-                    <p class="muted">Local data by default, secured with Face/Touch ID or PIN (optional). No advertising
-                        tracking.</p>
-                </div>
-
-                <!-- Calendar -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- calendar -->
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H2V6a2 2 0 0 1 2-2h1V3a1 1 0 1 1 2 0v1Zm15 8v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9h20Zm-6 3H8v2h8v-2Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Calendar</span>
-                    </div>
-                    <h3>Monthly calendar</h3>
-                    <p class="muted">Browse month by month, quickly see days with events.</p>
-                </div>
-
-                <!-- NEW: Cycle tracking -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- simple droplet/teardrop icon -->
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2c3.5 4.7 6 8.4 6 11a6 6 0 1 1-12 0c0-2.6 2.5-6.3 6-11z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Cycle</span>
-                    </div>
-                    <h3>Cycle tracking</h3>
-                    <p class="muted">Track your period and ovulation with smart predictions directly in your calendar
-                        (Premium).</p>
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="grid-3 mt-16">
-                <!-- Statistics -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- chart -->
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M4 20a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v13h15a1 1 0 1 1 0 2H4Zm5-4V9a1 1 0 0 1 2 0v7a1 1 0 1 1-2 0Zm5 0v-9a1 1 0 1 1 2 0v9a1 1 0 1 1-2 0Zm-10 0v-4a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Statistics</span>
-                    </div>
-                    <h3>Quick stats</h3>
-                    <p class="muted">Protection rate, averages, favorite times, by hour of the day, and more.</p>
-                </div>
-
-                <!-- Reminders -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- bell -->
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 22a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2ZM4 17h16l-2-2v-4a6 6 0 1 0-12 0v4l-2 2Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Reminders</span>
-                    </div>
-                    <h3>Smart reminders</h3>
-                    <p class="muted">Receive a daily reminder at your chosen time (Premium).</p>
-                </div>
-
-                <!-- iCloud -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- cloud -->
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7 19a5 5 0 0 1 0-10 6 6 0 0 1 11.7 1.8A4 4 0 1 1 18 19H7Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">iCloud</span>
-                    </div>
-                    <h3>iCloud sync (optional)</h3>
-                    <p class="muted">Access your data across devices with your iCloud account (Premium).</p>
-                </div>
-            </div>
-
-            <!-- Row 3 (single card, the grid will handle it) -->
-            <div class="grid-3 mt-16">
-                <!-- Export -->
-                <div class="card feature">
-                    <div class="head">
-                        <span class="feat-icon" aria-hidden="true">
-                            <!-- export / share -->
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 3 8 7h3v6h2V7h3l-4-4Zm-7 9a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-3v2h3v5H5v-5h3v-2H5Z" />
-                            </svg>
-                        </span>
-                        <span class="badge">Export</span>
-                    </div>
-                    <h3>CSV Export</h3>
-                    <p class="muted">Export your data for analysis or backup (Premium).</p>
-                </div>
-            </div>
-
+  <main>
+  <div class="container hero">
+    <div class="hero-grid">
+      <div>
+        <span class="badge">No account · No tracking · Data not collected</span>
+        <h1>Every partner, every moment, every record.</h1>
+        <p class="lead">Intimory is the private diary of an active sex life. Log a moment in seconds, keep a profile for every partner, beat your records and look after your sexual health. Everything stays on your iPhone, locked with Face ID.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Download on the App Store</a>
+          <a class="btn btn-ghost" href="#screenshots">See the app</a>
         </div>
-    </section>
+        <p class="hero-note">Free to download. Premium with a 7-day free trial on the yearly plan.</p>
+      </div>
+      <div class="hero-visual">
+        <img class="phone back" src="/assets/hero2-en.jpg" alt="Intimory partners list" width="720" height="1565" />
+        <img class="phone front" src="/assets/hero-en.jpg" alt="Intimory home screen" width="720" height="1565" />
+      </div>
+    </div>
+    <div class="trust">
+      <div class="item"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm3 8H9V7a3 3 0 0 1 6 0v3Z"/></svg></span><div><b>Data not collected</b><span>Stated on the App Store</span></div></div>
+      <div class="item"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm4 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg></span><div><b>On your iPhone</b><span>No account, no server</span></div></div>
+      <div class="item"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5c5 0 9 4.5 10 7-1 2.5-5 7-10 7S3 14.5 2 12c1-2.5 5-7 10-7Zm0 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg></span><div><b>Discreet</b><span>Face ID, PIN, discreet icon</span></div></div>
+      <div class="item"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 19a5 5 0 0 1 0-10 6 6 0 0 1 11.7 1.8A4 4 0 1 1 18 19H7Z"/></svg></span><div><b>Free iCloud sync</b><span>Your private iCloud only</span></div></div>
+    </div>
+  </div>
 
-    <!-- Pricing -->
-    <section id="pricing">
-        <div class="container">
-            <h2>Pricing</h2>
-            <div class="grid-3">
-
-                <div class="card">
-                    <h3>Free</h3>
-                    <div class="price"><span class="big">0 €</span></div>
-                    <ul class="list">
-                        <li><span class="dot"></span> Up to <strong>10 events</strong></li>
-                        <li><span class="dot"></span> Cycle tracking with period</li>
-                        <li><span class="dot"></span> Calendar & logging</li>
-                        <li><span class="dot"></span> On-device data</li>
-                    </ul>
-                    <div class="cta mt-12">
-                        <a class="btn btn-ghost" href="https://apps.apple.com/app/id6751414088" rel="noopener">Get
-                            started</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Monthly Premium</h3>
-                    <div class="price"><span class="big">2.99 €</span><span class="per">/ month</span></div>
-                    <ul class="list">
-                        <li><span class="dot"></span> Unlimited events</li>
-                        <li><span class="dot"></span> Advanced stats & filters</li>
-                        <li><span class="dot"></span> Ovulation predictions</li>
-                        <li><span class="dot"></span> Smart reminders</li>
-                        <li><span class="dot"></span> iCloud sync (optional)</li>
-                        <li><span class="dot"></span> CSV export</li>
-                    </ul>
-                    <div class="cta mt-12">
-                        <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088"
-                            rel="noopener">Subscribe</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Yearly Premium</h3>
-                    <div class="price"><span class="big">24.99 €</span><span class="per">/ year</span></div>
-                    <ul class="list">
-                        <li><span class="dot"></span> All Premium features</li>
-                        <li><span class="dot"></span> Save money yearly</li>
-                        <li><span class="dot"></span> Cancel anytime</li>
-                    </ul>
-                    <div class="cta mt-12">
-                        <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088"
-                            rel="noopener">Subscribe</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="grid-2" style="margin-top:16px">
-                <div class="card">
-                    <h3>Lifetime access</h3>
-                    <div class="price"><span class="big">39.99 €</span></div>
-                    <p class="muted">One-time payment. All Premium features included, forever.</p>
-                    <div class="cta mt-12">
-                        <a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Unlock
-                            lifetime</a>
-                    </div>
-                </div>
-                <div class="card legal">
-                    <h3>Legal info</h3>
-                    <p class="muted">Prices are indicative. Final pricing depends on your App Store region.</p>
-                    <small class="muted">Managed via StoreKit 2. Restore purchases available in the app.</small>
-                </div>
-            </div>
+  <section id="features">
+    <div class="container">
+      <h2>Everything you want to remember</h2>
+      <p class="section-lead">Built for people with an active, free sex life. Also great for couples and for trying for a baby.</p>
+      <div class="grid-3">
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20c0-3.3 3.1-6 7-6s7 2.7 7 6v1H2v-1Zm15.5 1v-1c0-1.9-.8-3.6-2.1-4.8.5-.1 1.1-.2 1.6-.2 3 0 5 2 5 4.5V21h-4.5Z"/></svg></span><span class="badge">Partners</span></div>
+          <h3>A private profile for every partner</h3>
+          <p class="muted">Emoji, relationship, how you met, city, rating, tags and private notes. Each partner gets a page with your moments together, first and last time and favorite practices.</p>
         </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <h2>FAQ</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Do my data ever leave my device?</h3>
-                    <p class="muted">No, by default everything stays local. You can enable iCloud sync (Premium) if you
-                        want your data on multiple devices.</p>
-                </div>
-                <div class="card">
-                    <h3>What’s included in the free plan?</h3>
-                    <p class="muted">Calendar, logging, and browsing up to 10 events.</p>
-                </div>
-                <div class="card">
-                    <h3>What’s included in Premium?</h3>
-                    <p class="muted">Unlimited events, advanced stats & filters, smart reminders, CSV export, iCloud
-                        sync (optional).</p>
-                </div>
-                <div class="card">
-                    <h3>Can I cancel anytime?</h3>
-                    <p class="muted">Yes, from your App Store settings. You can also restore your purchases inside the
-                        app.</p>
-                </div>
-            </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v13h15a1 1 0 1 1 0 2H4Zm5-4V9a1 1 0 0 1 2 0v7a1 1 0 1 1-2 0Zm5 0v-9a1 1 0 1 1 2 0v9a1 1 0 1 1-2 0Zm-10 0v-4a1 1 0 1 1 2 0v4a1 1 0 1 1-2 0Z"/></svg></span><span class="badge">Stats</span></div>
+          <h3>Records &amp; insights</h3>
+          <p class="muted">Monthly trend, days and hours, new partners, best day, busiest week, longest streak, how you met and a map of your encounters.</p>
         </div>
-    </section>
-
-    <!-- Legal / Contact -->
-    <section id="legal">
-        <div class="container">
-            <h2>Legal</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Privacy policy</h3>
-                    <p class="muted">No server collection. Local data by default. Optional iCloud sync.</p>
-                    <a class="btn" href="/privacy.html">Read policy</a>
-                </div>
-                <div class="card">
-                    <h3>Terms of use (EULA)</h3>
-                    <p class="muted">Please read our terms for usage rules of Intimory.</p>
-                    <a class="btn" href="/terms.html">Read terms</a>
-                </div>
-            </div>
-            <div class="card" style="margin-top:16px">
-                <h3>Contact us</h3>
-                <p class="muted">Got a question? Email us at <a
-                        href="mailto:contact@intimory.app">contact@intimory.app</a></p>
-            </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10v2h3v3a4 4 0 0 1-4 4h-.3A5 5 0 0 1 13 14.9V18h3v3H8v-3h3v-3.1A5 5 0 0 1 8.3 12H8a4 4 0 0 1-4-4V5h3V3Zm0 4H6v1a2 2 0 0 0 1 1.7V7Zm10 0v2.7A2 2 0 0 0 18 8V7h-1Z"/></svg></span><span class="badge">Trophies</span></div>
+          <h3>Around thirty trophies</h3>
+          <p class="muted">Streaks, night owl, marathon, cities and countries… A little celebration pops up every time you unlock one.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-grid">
-            <div>
-                <div class="brand">
-                    <img src="/assets/logo.png" alt="Intimory logo" />
-                    <span>Intimory</span>
-                </div>
-                <p class="small">Private intimacy journal.<br />Your data stays on-device.</p>
-            </div>
-            <div>
-                <h4>Resources</h4>
-                <p class="small"><a href="/privacy.html">Privacy policy</a><br /><a href="/terms.html">Terms of use</a>
-                </p>
-            </div>
-            <div>
-                <h4>Social</h4>
-                <p class="small">
-                    <a href="https://instagram.com/intimory.app" target="_blank" rel="noopener">Instagram</a> ·
-                    <a href="https://www.facebook.com/people/Intimory/61579726661295/" target="_blank"
-                        rel="noopener">Facebook</a>
-                </p>
-                <p class="small">
-                    <a href="https://apps.apple.com/app/id6751414088?action=write-review" target="_blank"
-                        rel="noopener">
-                        Leave a review on the App Store
-                    </a>
-                </p>
-            </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2Zm6 12 .9 2.1L21 17l-2.1.9L18 20l-.9-2.1L15 17l2.1-.9L18 14ZM5 15l.7 1.6L7.3 17.3l-1.6.7L5 19.6l-.7-1.6L2.7 17.3l1.6-.7L5 15Z"/></svg></span><span class="badge">Wish list</span></div>
+          <h3>Your wish list</h3>
+          <p class="muted">Note what you want to try, alone or with a partner, with ideas to get started. Tick it off and log the moment in one tap.</p>
         </div>
-    </footer>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3h4v4h4v4h-4v4h-4v-4H6V7h4V3Zm-6 15h16v3H4v-3Z"/></svg></span><span class="badge">Health</span></div>
+          <h3>Sexual health</h3>
+          <p class="muted">Log your screenings, see partners since your last test, get a recommended rhythm and discreet reminders, including a daily PrEP reminder. Free for everyone.</p>
+        </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 12v2h2v-2H7Zm4-4v6h2v-6h-2Zm4-4v10h2V7h-2Z"/></svg></span><span class="badge">Recap</span></div>
+          <h3>Monthly &amp; yearly recap</h3>
+          <p class="muted">Highlights, records and trends of your month or year, ready to share as an image without any names.</p>
+        </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2c3.5 4.7 6 8.4 6 11a6 6 0 1 1-12 0c0-2.6 2.5-6.3 6-11z"/></svg></span><span class="badge">Cycle</span></div>
+          <h3>Cycle &amp; trying to conceive</h3>
+          <p class="muted">Period tracking, fertile window, ovulation and cycle history, with discreet reminders. Estimates only, not a contraceptive method.</p>
+        </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span><span class="badge">Quick</span></div>
+          <h3>Log it in one tap</h3>
+          <p class="muted">Recent partners on the home screen, suggestions while typing, a long press on the app icon or just ask Siri: “Log a moment in Intimory”.</p>
+        </div>
+        <div class="card feature">
+          <div class="head"><span class="feat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/></svg></span><span class="badge">Discretion</span></div>
+          <h3>Discreet by design</h3>
+          <p class="muted">Face ID or PIN lock, hidden in the app switcher, discreet app icon, neutral notifications and names hidden in one tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        try { localStorage.setItem("langPref", "en"); } catch (e) { }
-    </script>
+  <section id="screenshots">
+    <div class="container">
+      <h2>See it in action</h2>
+      <p class="section-lead">Real screens, with demo data.</p>
+      <div class="gallery" tabindex="0">
+        <img src="/assets/screens/en/01_partners.jpg" alt="Partners list" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/02_partner.jpg" alt="Partner page" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/03_trophies.jpg" alt="Trophies" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/04_records.jpg" alt="Records" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/05_map.jpg" alt="Map of encounters" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/06_wishes.jpg" alt="Wish list" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/07_health.jpg" alt="Sexual health" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/08_home.jpg" alt="Home screen" loading="lazy" width="620" height="1348" />
+        <img src="/assets/screens/en/09_discreet.jpg" alt="Discreet mode" loading="lazy" width="620" height="1348" />
+      </div>
+    </div>
+  </section>
 
-    <!-- <div id="cookie-root"></div>
-    <script src="app-analytics.js" defer></script> -->
+  <section id="profiles">
+    <div class="container">
+      <h2>Made for the way you live</h2>
+      <p class="section-lead">Choose your use when you start. You can change it anytime, nothing is lost.</p>
+      <div class="grid-3">
+        <div class="card profile">
+          <div class="emoji" aria-hidden="true">🔥</div>
+          <h3>Free spirit, several partners</h3>
+          <ul><li>Partners tab with private profiles</li><li>Stats that start with your encounters</li><li>Trophies for partners, cities and countries</li><li>Screening rhythm based on your partners</li></ul>
+        </div>
+        <div class="card profile">
+          <div class="emoji" aria-hidden="true">❤️</div>
+          <h3>In a relationship</h3>
+          <ul><li>A simple app made for two</li><li>Your rhythm, habits and monthly recap</li><li>A wish list of ideas to try together</li><li>Cycle tracking if you want it</li></ul>
+        </div>
+        <div class="card profile">
+          <div class="emoji" aria-hidden="true">✨</div>
+          <h3>Trying for a baby</h3>
+          <ul><li>Fertile window and ovulation on the calendar</li><li>Moments in the fertile window, cycle after cycle</li><li>A discreet reminder before each window</li><li>Estimates only, not a medical device</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <h2>Pricing</h2>
+      <p class="section-lead">Start free. Upgrade when you want the full picture.</p>
+      <div class="grid-2">
+        <div class="card price-card">
+          <h3>Free</h3>
+          <div class="price"><span class="big">0 €</span></div>
+          <ul class="list"><li><span class="dot"></span> Unlimited logging</li><li><span class="dot"></span> Your last 30 days</li><li><span class="dot"></span> Partner list and simple profiles</li><li><span class="dot"></span> Sexual health and reminders</li><li><span class="dot"></span> 3 wishes at a time</li><li><span class="dot"></span> Free iCloud sync and Face ID lock</li></ul>
+          <div class="cta mt-12"><a class="btn btn-ghost" href="https://apps.apple.com/app/id6751414088" rel="noopener">Get started</a></div>
+        </div>
+        <div class="card price-card highlight">
+          <h3>Premium</h3>
+          <ul class="list"><li><span class="dot"></span> Your full history</li><li><span class="dot"></span> Complete partner profiles and map</li><li><span class="dot"></span> Records, trophies and advanced stats</li><li><span class="dot"></span> Unlimited wish list</li><li><span class="dot"></span> Monthly and yearly recap to share</li><li><span class="dot"></span> Trying to conceive mode</li><li><span class="dot"></span> Apple Health, smart reminders, CSV export</li></ul>
+        </div>
+      </div>
+      <div class="grid-3 mt-16">
+        <div class="card price-card">
+          <h3>Premium monthly</h3>
+          <div class="price"><span class="big">2.99 €</span><span class="per">/ month</span></div>
+          <div class="cta mt-12"><a class="btn btn-ghost" href="https://apps.apple.com/app/id6751414088" rel="noopener">Subscribe</a></div>
+        </div>
+        <div class="card price-card highlight">
+          <h3>Premium yearly<span class="ribbon">7 days free</span></h3>
+          <div class="price"><span class="big">24.99 €</span><span class="per">/ year</span></div>
+          <div class="cta mt-12"><a class="btn btn-primary" href="https://apps.apple.com/app/id6751414088" rel="noopener">Try free for 7 days</a></div>
+        </div>
+        <div class="card price-card">
+          <h3>Lifetime</h3>
+          <div class="price"><span class="big">39.99 €</span></div>
+          <p class="muted">One-time payment, all Premium features forever.</p>
+          <div class="cta mt-12"><a class="btn btn-ghost" href="https://apps.apple.com/app/id6751414088" rel="noopener">Unlock for life</a></div>
+        </div>
+      </div>
+      <p class="small mt-12">Prices are indicative and may vary by country. Purchases are handled by Apple. Cancel anytime in your App Store settings; Restore Purchases is in the app.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+        <details><summary>Is my data sent anywhere?</summary><p class="muted">No. Intimory has no account and no server. Your data stays on your iPhone. If you turn on iCloud sync, it goes to your own private iCloud, which we cannot access. The App Store privacy label says “Data Not Collected”.</p></details>
+        <details><summary>What is free?</summary><p class="muted">Unlimited logging, your last 30 days, the partner list, sexual health and reminders, 3 wishes at a time, iCloud sync and Face ID lock. Older entries are never deleted: they come back with Premium.</p></details>
+        <details><summary>What does Premium add?</summary><p class="muted">Your full history, complete partner profiles and the map, records, trophies, advanced stats, an unlimited wish list, the shareable recap, trying to conceive mode, Apple Health, smart reminders and CSV export.</p></details>
+        <details><summary>Can someone else see my data?</summary><p class="muted">Lock the app with Face ID or a PIN, hide it in the app switcher, switch to the discreet notebook icon and hide names with one tap. Notifications always use neutral text.</p></details>
+        <details><summary>Is it a medical app?</summary><p class="muted">No. The sexual health section helps you keep track of your own screenings, and the cycle features give estimates. Intimory is not a medical device and must not be used as contraception.</p></details>
+        <details><summary>How do I cancel?</summary><p class="muted">Subscriptions are managed by Apple: open Settings &gt; your name &gt; Subscriptions. You can restore your purchases in the app at any time.</p></details>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="container">
+      <h2>Legal &amp; contact</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Privacy policy</h3><p class="muted">No account, no server, no data collected by the app.</p><a class="btn" href="/privacy.html">Read the policy</a></div>
+        <div class="card"><h3>Terms of use</h3><p class="muted">Rules of use, subscriptions and age requirement (16+).</p><a class="btn" href="/terms.html">Read the terms</a></div>
+        <div class="card"><h3>Contact</h3><p class="muted">A question or a suggestion? Write to <a href="mailto:contact@intimory.app">contact@intimory.app</a></p></div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><img src="/assets/logo.png" alt="" width="28" height="28" /><span>Intimory</span></div>
+        <p class="small">The private sex diary for iPhone.<br/>No account. No tracking.</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <p class="small"><a href="/privacy.html">Privacy policy</a><br /><a href="/terms.html">Terms of use</a><br /><a href="/blog/">Blog</a><br /><button class="linklike" data-cookie-settings>Cookie settings</button></p>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <p class="small"><a href="https://instagram.com/intimory.app" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/people/Intimory/61579726661295/" target="_blank" rel="noopener">Facebook</a></p>
+        <p class="small"><a href="https://apps.apple.com/app/id6751414088?action=write-review" target="_blank" rel="noopener">Leave a review on the App Store</a></p>
+        <p class="small lang-links">Languages : <a href="/">English</a> <a href="/fr/">Français</a> <a href="/es/">Español</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>try { localStorage.setItem("langPref", "en"); } catch (e) { }</script>
+  <div id="cookie-root"></div>
+  <script src="/app-analytics.js?v=2" defer></script>
 </body>
-
 </html>
